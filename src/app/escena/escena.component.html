@@ -1,4 +1,35 @@
-@for (frase of frasesArray; track frase.title + frase.description){
-<h3>{{frase.title}}</h3>
-<p>{{frase.description}}</p><br>
-}
+<div class="p-3">
+  <div class="card rounded-5">
+    <!-- Imágenes -->
+    <ng-container *ngFor="let img of frasesArray; let i=index">
+      <div *ngIf="i===counter">
+        <div [style.background-color]="frasesArray[counter].bgcolor"
+          class="py-3 d-flex justify-content-center align-items-center container-img">
+          <img [src]="frasesArray[counter].img" alt="image" class="img-fluid py-5">
+        </div>
+        <!-- Frases -->
+        <div class="p-3 frases">
+          <h2 class="h5 pt-3"><b>{{ frasesArray[counter].title }}</b></h2>
+            <p>{{ frasesArray[counter].description }}</p>
+        </div>
+      </div>
+    </ng-container>
+    <!-- Dots -->
+    <div class="d-flex justify-content-between align-items-center p-3 pb-5 container-footer" style="margin-top: auto;">
+      <div class="pagination">
+        <span class="dot dot-active" *ngFor="let step of frasesArray; let i = index" [class.active]="i === counter"></span>
+      </div>
+      <!-- Botones -->
+      <div class="d-flex justify-content-center align-items-center gap-2">
+        <!-- Botón Previous -->
+        <button type="button" *ngIf="counter !== 0" class="btn btn-outline-dark rounded-circle rewind" (click)="onPrevious()">
+          <span style="margin-bottom: 3px;">&#8592;</span>
+        </button>
+        <!-- Botón Next -->
+        <button type="button" *ngIf="counter !== frasesArray.length - 1" class="btn btn-dark rounded-circle p-3 forward" (click)="onNext()">
+          <span style="margin-bottom: 3px;">&#8594;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
