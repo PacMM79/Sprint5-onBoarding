@@ -8,9 +8,18 @@
   box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.418);
   border: 0px;
 }
+.frases {
+  animation: down 0.8s ease-out;
+  line-height: 24px;
+}
+p {
+  margin-top: 15px;
+  font-size: 17px;
+}
 .container-img {
   min-height: 490px;
   max-height: 512px;
+  animation: down 0.8s ease-out;
 }
 .pagination {
   display: flex;
@@ -25,6 +34,7 @@
   display: inline-block;
   transition: background-color 0.3s;
   cursor: pointer;
+  animation: up 0.8s ease-out;
 }
 .dot.active {
   background-color: #212529;
@@ -37,6 +47,9 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+button.forward {
+  animation: up 0.8s ease-out;
+}
 .forward, .rewind {
   font-size: 2rem;
   height: 4rem;
@@ -44,4 +57,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    translate: (0);
+  }
+}
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    translate: (0);
+  }
 }
