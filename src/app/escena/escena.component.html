@@ -17,7 +17,7 @@
     <!-- Dots -->
     <div class="d-flex justify-content-between align-items-center p-3 pb-5 container-footer" style="margin-top: auto;">
       <div class="pagination">
-        <span class="dot dot-active" *ngFor="let step of frasesArray; let i = index" [class.active]="i === counter"></span>
+        <span class="dot dot-active" *ngFor="let step of frasesArray; let i = index" [class.active]="i === counter" (click)="changeStep(i)"></span>
       </div>
       <!-- Botones -->
       <div class="d-flex justify-content-center align-items-center gap-2">
