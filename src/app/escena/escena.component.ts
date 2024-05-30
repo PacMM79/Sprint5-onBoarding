@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { iStep } from '../i-step';
-import { StepsService } from '../steps.service';
 
 @Component({
   selector: 'app-escena',
