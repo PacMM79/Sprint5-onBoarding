@@ -3,10 +3,12 @@
   max-width: 22rem;
   overflow: hidden;
   margin: auto;
-  min-height: 740px;
-  position: relative;
+  position: absolute;
   box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.418);
   border: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .frases {
   animation: down 0.8s ease-out;
@@ -17,8 +19,7 @@ p {
   font-size: 17px;
 }
 .container-img {
-  min-height: 490px;
-  max-height: 512px;
+  min-height: 420px;
   animation: down 0.8s ease-out;
 }
 .pagination {
